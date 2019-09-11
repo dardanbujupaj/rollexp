@@ -1,6 +1,6 @@
 {
   "name": "rollexp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module for evaluating and rolling rpg dice expressions.",
   "main": "./src/index.js",
   "module": "./src/index.js",
