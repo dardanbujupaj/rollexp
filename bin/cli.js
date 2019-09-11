@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const rollexp = require('../src/index.js');
+const {evaluateExpression} = require('../src/index.js');
 
 const [,, ...args] = process.argv;
 
@@ -11,10 +11,16 @@ if (args.includes('--v')) {
   verbose = true;
 }
 
+if (args.length === 0) {
+  console.log('Usage: roll EXPRESSION')
+  console.log('Example: \n %roll d20 + 5\n 25')
+  return
+}
+
 const expression = args.join(' ');
 
 
-const {result, explanation} = rollexp.evaluateExpression(expression);
+const {result, explanation} = evaluateExpression(expression);
 
 if (verbose) {
   console.log(explanation + ' => ' + result);
