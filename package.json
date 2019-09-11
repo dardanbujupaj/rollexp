@@ -1,0 +1,36 @@
+{
+  "name": "rollexp",
+  "version": "1.0.0",
+  "description": "Module for evaluating and rolling rpg dice expressions.",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "build": "webpack --config=webpack.config.js"
+  },
+  "bin": {
+    "roll": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dardanbujupaj/rollexp.git"
+  },
+  "keywords": [
+    "dice",
+    "roll",
+    "expression",
+    "rpg"
+  ],
+  "author": "Dardan Bujupaj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dardanbujupaj/rollexp/issues"
+  },
+  "homepage": "https://github.com/dardanbujupaj/rollexp#readme",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
