@@ -118,7 +118,7 @@ function evaluateTerm(term = 'd20') {
   }
 
 
-  result = rolls.reduce((a, b) => a + b, 0);
+  const result = rolls.reduce((a, b) => a + b, 0);
   const explanation = result + ' [' + term + ' -> ' + rolls + ']';
 
   return new DiceResult(result, explanation);
