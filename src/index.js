@@ -25,7 +25,7 @@ const expressionRegex = /(\d*[d]\d+)(h\d+)?(l\d+)?|[+-]|\d+/g;
 */
 function evaluateExpression(expression = '1d20 + 5') {
   // get array of terms and operators
-  parts = expression.match(expressionRegex);
+  const parts = expression.match(expressionRegex);
 
   // TODO check parts if combination is valid
 
@@ -33,7 +33,7 @@ function evaluateExpression(expression = '1d20 + 5') {
   let totalExplanation = '';
 
   // first term is added if not preceeded by '-'
-  operation = '+';
+  let operation = '+';
 
   // process each part of the expression
   parts.forEach((part) => {
