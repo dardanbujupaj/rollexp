@@ -1,0 +1,46 @@
+= rollexp
+Dardan Bujupaj
+
+A simple module for evaluating common rpg dice expressions.
+
+
+== Usage
+The module can be used as a js-library or as a node application from terminal.
+
+
+=== JavaScript / Typescript
+
+* install the package `npm install rollexp`
+* import and use the library 
+[source, javascript]
+----
+import { evaluateExpression } from 'rollexp';
+
+
+const { result, explanation } = evaluateExpression('1d20 + 5')
+
+console.log('rolled a ' + result)
+
+----
+
+
+=== cli
+
+Install the package via `npm install rollexp`.
+
+Import and use the library in your Javascript
+[source, javascript]
+----
+// use import:
+import { evaluateExpression } from 'rollexp';
+// or use require:
+// require { evaluateExpression } from 'rollexp';
+
+
+// evaluate expression
+const { result, explanation } = evaluateExpression('1d20 + 5')
+
+// use result
+console.log('rolled a ' + result)
+
+----
