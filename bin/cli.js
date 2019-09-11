@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const rollexp = require('./src/index.js');
+const rollexp = require('../src/index.js');
 
 const [,, ...args] = process.argv;
 
