@@ -7,7 +7,7 @@ const [,, ...args] = process.argv;
 let verbose = false;
 
 if (args.includes('--v')) {
-  args.splice(args.findIndex((a) => a === '--v'));
+  args.splice(args.findIndex((a) => a === '--v'), 1);
   verbose = true;
 }
 

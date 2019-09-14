@@ -28,19 +28,18 @@ console.log('rolled a ' + result)
 
 Install the package via `npm install rollexp`.
 
-Import and use the library in your Javascript
-[source, javascript]
+Roll a dice expression
+[source, bash]
 ----
-// use import:
-import { evaluateExpression } from 'rollexp';
-// or use require:
-// require { evaluateExpression } from 'rollexp';
-
-
-// evaluate expression
-const { result, explanation } = evaluateExpression('1d20 + 5')
-
-// use result
-console.log('rolled a ' + result)
-
+% roll 1d20 + 4
+15
 ----
+
+Roll an expression and show individual dice results.
+[source, bash]
+----
+% roll --v 1d20 + 4
+15
+----
+
+

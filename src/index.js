@@ -14,7 +14,7 @@ class DiceResult {
   }
 }
 
-const expressionRegex = /(\d*[d]\d+)(h\d+)?(l\d+)?|[+-]|\d+/g;
+const expressionRegex = /(\d*[d]\d+)(h\d+)?(l\d+)?|[\*\/+-]|\d+/g;
 
 /**
 * Evaluate a dice expression consisting of multiple dice terms
@@ -45,6 +45,12 @@ function evaluateExpression(expression = '1d20 + 5') {
     } else if (part === '-') {
       operation = '-';
       totalExplanation += ' - ';
+    } else if (part === '*') {
+      operation = '*';
+      totalExplanation += ' * ';
+    } else if (part === '/') {
+      operation = '/';
+      totalExplanation += ' / ';
     } else if (isNaN(part)) {
       // evaluate dice term
       const {result, explanation} = evaluateTerm(part);
@@ -57,10 +63,21 @@ function evaluateExpression(expression = '1d20 + 5') {
     }
 
     // if last operator was '-' subtract, else add
-    if (operation === '-') {
-      totalResult -= partResult;
-    } else {
-      totalResult += partResult;
+    if (partResult !== 0) {
+      switch (operation) {
+        case '-':
+          totalResult -= partResult;
+          break;
+        case '+':
+          totalResult += partResult;
+          break;
+        case '*':
+          totalResult *= partResult;
+          break;
+        case '/':
+          totalResult /= partResult;
+          break;
+      }
     }
   });
 
