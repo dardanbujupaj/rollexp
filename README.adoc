@@ -36,10 +36,11 @@ Roll a dice expression
 ----
 
 Roll an expression and show individual dice results.
+Use '--v' argmument for verbose output.
 [source, bash]
 ----
 % roll --v 1d20 + 4
-15
+18 [1d20 -> 18] + 4 => 22
 ----
 
 
